@@ -5,36 +5,36 @@ describe "tests del registro de produccion" {
         maquina.asignar([43,18,49,62,33,39])
   }
   test "si algun dia se produjo 49" {
-    assert.that(maquina.registroProduccion.algunDiaSeProdujo(49))
+    assert.that(maquina.algunDiaSeProdujo(49))
   }
   test "si no se produjo 52 en ningun dia" {
-    assert.notThat(maquina.registroProduccion.algunDiaSeProdujo(52))
+    assert.notThat(maquina.algunDiaSeProdujo(52))
   }
   test "si el maximo valor de produccion es 62" {
-    assert.equals(maquina.registroProduccion.maximoValorDeProduccion(),62)
+    assert.equals(maquina.maximoValorDeProduccion(),62)
   }
   test "si los valores de produccion pares son 18 y 62" {
-    assert.equals(maquina.registroProduccion.valoresDeProduccionPares(), [18,62])
+    assert.equals(maquina.valoresDeProduccionPares(), [18,62])
   }
   test "si la produccion se encuentra entre 10 y 100 en todos los dias" {
-    assert.that(maquina.registroProduccion.produccionEsAcotada(10,100))
+    assert.that(maquina.produccionEsAcotada(10,100))
   }
   test "si la produccion no se encuentra entre 20 y 100 en todos los dias" {
-    assert.notThat(maquina.registroProduccion.produccionEsAcotada(20,100))
+    assert.notThat(maquina.produccionEsAcotada(20,100))
   }
   test "si las producciones superiores a 35 son 43, 49, 62 y 39" {
-    assert.equals(maquina.registroProduccion.produccionesSuperioresA(35), [43,49,62,39])
+    assert.equals(maquina.produccionesSuperioresA(35), [43,49,62,39])
   }
   test "si al sumarse 5 a las producciones se obtiene 48, 23, 54, 67, 38, 44" {
-    assert.that(maquina.registroProduccion.produccionesSumando(5) == [48,23,54,67,38,44])
+    assert.that(maquina.produccionesSumando(5) == [48,23,54,67,38,44])
   }
   test "si el total producido es 244" {
-    assert.equals(maquina.registroProduccion.totalProducido(),244)
+    assert.equals(maquina.totalProducido(),244)
   }
   test "si el ultimo dia registrado se produjo 39" {
-    assert.equals(maquina.registroProduccion.ultimoValorDeProduccion(),39)
+    assert.equals(maquina.ultimoValorDeProduccion(),39)
   }
   test "si los dias que se produjo más que en el primero son 2" {
-    assert.equals(maquina.registroProduccion.cantidadProduccionesMayorALaPrimera(),2)
+    assert.equals(maquina.cantidadProduccionesMayorALaPrimera(),2)
   }
 }
