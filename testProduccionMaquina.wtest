@@ -35,6 +35,6 @@ describe "tests del registro de produccion" {
     assert.equals(maquina.ultimoValorDeProduccion(),39)
   }
   test "si los dias que se produjo más que en el primero son 2" {
-    assert.equals(maquina.cantidadProduccionesMayorALaPrimera(),2)
+    assert.that(maquina.cantidadProduccionesMayorALaPrimera() == 2)
   }
 }
